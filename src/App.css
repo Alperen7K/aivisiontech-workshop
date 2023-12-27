@@ -10,3 +10,15 @@
   background-image: url(/src/bg.svg);
   background-position: center;
 }
+
+
+@font-face {
+  font-family: 'FontBold';
+  src: local('YourFontName'), url('fonts/SourceCodePro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body{
+  font-family: 'FontBold', sans-serif;
+}
