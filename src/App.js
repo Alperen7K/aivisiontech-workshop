@@ -93,10 +93,12 @@ export const App = () => {
             className="dropShadow"
             style={{ height: "400px" }}
           /> */}
-          <div className=" ml-16">
+
+          {/* Left side */}
+          <div className=" ml-20">
             <div className="  flex items-center justify-center ">
               <img
-                className="bg-[#232931] rounded-[30px]  dropShadow w-[10vw] pr-2 border-solid  border-[#4ECCA3] border-4"
+                className="bg-[#232931] rounded-[30px]  dropShadow w-[10vw] pr-2 p-1 border-solid  border-[#4ECCA3] border-4"
                 src={ai4sports}
               />
             </div>
@@ -106,9 +108,6 @@ export const App = () => {
               initial="hidden"
               animate="visible"
             >
-              {/* <motion.li variants={item}> */}
-              {/* </motion.li> */}
-
               <motion.li className=" text-[#eee] w-fit" variants={item}>
                 <h1 className="dropShadow text-[60px] border-solid border-[#4ECCA3] border-b-4 border-r-4 rounded-br-xl pb-0 pr-3 mt-4 w-fit font-bold ">
                   Fark Edilmeyen
@@ -119,8 +118,19 @@ export const App = () => {
                   Sakatlıklara SON!
                 </h1>
               </motion.li>
+              <motion.li
+                className=" text-[#eee] flex items-center justify-center w-[620px]"
+                variants={item}
+              >
+                <label className="dropShadow text-[20px]  mt-8 line-clamp-4 text-balance font-bold ">
+                  Yapay zeka destekli termal görüntüleme sistemimizle
+                  profesyonel sporcularda olası sakatlık, kas problemleri ve
+                  yorgunlukları tespit ediyor ve sakatlıkları belirliyoruz.
+                </label>
+              </motion.li>
             </motion.ul>
           </div>
+          {/* 3D modal */}
           <HumanModal />
         </div>
       </div>

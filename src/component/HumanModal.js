@@ -19,7 +19,7 @@ export const HumanModal = () => {
       dpr={[1, 2]}
       shadows
       camera={{ fov: 60 }}
-      style={{ width: "40vw" }}
+      style={{ width: "45svw" }}
     >
       <PresentationControls
         speed={4}
@@ -38,5 +38,5 @@ export const HumanModal = () => {
 
 function Modal(props) {
   const { scene } = useGLTF("/human.glb");
-  return <primitive object={scene} scale={0.01} {...props} />;
+  return <primitive object={scene} scale={0.02} {...props} />;
 }
