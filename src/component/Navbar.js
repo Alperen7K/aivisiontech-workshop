@@ -29,7 +29,11 @@ export const Navbar = () => {
   return (
     <div className=" w-full h-[14vh] flex items-start justify-center  ">
       <div className="w-[85vw] h-full flex items-center justify-between">
-        <img className=" h-[100px]" src={logo} />
+        <img
+          className=" h-[100px] animate-[wiggle_1s_ease-in-out_infinite]"
+          src={logo}
+        />
+
         <div className="flex items-center">
           <motion.ul
             className="flex items-center"

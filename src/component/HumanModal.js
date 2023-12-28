@@ -16,8 +16,10 @@ export const HumanModal = () => {
   return (
     <Canvas
       className=""
-      dpr={[1, 2]}
-      shadows
+      performance={"regress"}
+      // dpr={[1, 2]}
+      legacy={true}
+      shadows={false}
       camera={{ fov: 60 }}
       style={{ width: "45svw" }}
     >
@@ -26,9 +28,9 @@ export const HumanModal = () => {
         global
         zoom={0.5}
         rotation={[0, y, 0]}
-        polar={[-0.1, Math.PI / 4]}
+        // polar={[-0.1, Math.PI / 4]}
       >
-        <Stage environment={"sunset"}>
+        <Stage shadows={false} environment={"sunset"}>
           <Modal scale={0.01} />
         </Stage>
       </PresentationControls>
