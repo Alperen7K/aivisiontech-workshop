@@ -6,19 +6,31 @@
   filter: drop-shadow(4px 1px 15px #000000d5);
 }
 
-.bg{
-  background-image: url(/src/bg.svg);
-  background-position: center;
-}
-
-
 @font-face {
   font-family: 'FontBold';
-  src: local('YourFontName'), url('fonts/SourceCodePro-Bold.ttf') format('truetype');
+  src: local('YourFontName'), url('fonts/SpoofTrial-Regular.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ai4sportsFont';
+  src: local('YourFontName'), url('fonts/solitas-normal-medium.otf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 body{
   font-family: 'FontBold', sans-serif;
+}
+
+.ai4sports-font{
+  font-family: 'ai4sportsFont', sans-serif;
+
+}
+
+.bg-pattern{
+  background-image: url(/src/assets/largeBg1.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

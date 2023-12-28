@@ -15,7 +15,7 @@ export const HumanModal = () => {
 
   return (
     <Canvas
-      className="dropShadow"
+      className=""
       dpr={[1, 2]}
       shadows
       camera={{ fov: 60 }}

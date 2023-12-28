@@ -1,10 +1,7 @@
 import "./App.css";
-import logo from "./aivisiontechWhite.svg";
-import termo from "./termoHUMAN.png";
 import { motion } from "framer-motion";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import ai4sports from "./ai4sportsWhite.svg";
-import { HumanModal } from "./component";
+import ai4sports from "./assets/ai4sportsBlack.svg";
+import { HumanModal, Navbar } from "./component";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -25,25 +22,6 @@ const item = {
     opacity: 1,
   },
 };
-const navbarContainer = {
-  hidden: { opacity: 1, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.4,
-    },
-  },
-};
-
-const navbarItem = {
-  hidden: { y: -25, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-};
 
 // #D6E1ED beyazımsı
 // #5DB19B yeşil
@@ -51,56 +29,23 @@ const navbarItem = {
 // #F77F93 PEMBE
 
 export const App = () => {
-  let labelClass =
-    "font-bold bg-[#232931] text-[20px] px-2 text-[#EEEEEE] hover:border-b-[3px] border-solid hover:border-[#4ECCA3] box-border";
+  let titleClass = "text-[#000] text-[60px]";
 
   return (
-    <div className="h-[100vh] w-[100vw]  flex flex-col items-center">
-      {/* Navbar */}
-      <div className=" w-full h-[14vh] flex items-start justify-center bg-[#232931] border-solid border-b-4 border-[#4ECCA3] shadow-xl">
-        <div className="w-[85vw] h-full flex items-center justify-between">
-          <img className="dropShadow h-[100px]" src={logo} />
-          <div className="flex items-center">
-            <motion.ul
-              className="flex items-center"
-              variants={navbarContainer}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.li variants={navbarItem}>
-                <label className={labelClass}>ÜRÜN</label>
-              </motion.li>
-              <motion.li variants={navbarItem}>
-                <label className={labelClass}>HAKKIMIZDA</label>
-              </motion.li>
-              <motion.li variants={navbarItem}>
-                <label className={labelClass}>İLETİŞİM</label>
-              </motion.li>
-              <motion.li variants={navbarItem}>
-                <label className={labelClass}>HABERLER</label>
-              </motion.li>
-            </motion.ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-[#393E46] h-full w-full">
+    <div className="bg-[#D6E1ED] bg-pattern h-[100vh] w-[100vw]  flex flex-col items-center">
+      <Navbar />
+      <div className=" h-full w-full">
         <div className="bg h-[88vh] w-full flex items-center justify-evenly ">
-          {/* <Player
-            autoplay
-            loop
-            src={deneme}
-            className="dropShadow"
-            style={{ height: "400px" }}
-          /> */}
-
           {/* Left side */}
-          <div className=" ml-20">
-            <div className="  flex items-center justify-center ">
-              <img
-                className="bg-[#232931] rounded-[30px]  dropShadow w-[10vw] pr-2 p-1 border-solid  border-[#4ECCA3] border-4"
+          <div className=" ml-[10vw]">
+            <div className="  flex items-center justify-start ">
+              {/* <img
+                className=" rounded-[30px]   w-[10vw] pr-2 p-1 border-solid  border-[#4ECCA3] border-4"
                 src={ai4sports}
-              />
+              /> */}
+              <label className="ai4sports-font rounded-[30px] text-center  text-[30px]   px-3 py-1 border-solid  border-[#5DB19B] border-4">
+                ai4sports
+              </label>
             </div>
             <motion.ul
               className="gap-[10px]"
@@ -108,21 +53,17 @@ export const App = () => {
               initial="hidden"
               animate="visible"
             >
-              <motion.li className=" text-[#eee] w-fit" variants={item}>
-                <h1 className="dropShadow text-[60px] border-solid border-[#4ECCA3] border-b-4 border-r-4 rounded-br-xl pb-0 pr-3 mt-4 w-fit font-bold ">
-                  Fark Edilmeyen
-                </h1>
+              <motion.li className="  w-fit" variants={item}>
+                <h1 className={`${titleClass}`}>Fark Edilmeyen</h1>
               </motion.li>
-              <motion.li className=" text-[#eee]" variants={item}>
-                <h1 className="dropShadow text-[60px] border-solid border-[#4ECCA3] border-b-4 border-r-4 rounded-br-xl pb-0 pr-3 mt-4 w-fit font-bold ">
-                  Sakatlıklara SON!
-                </h1>
+              <motion.li className=" " variants={item}>
+                <h1 className={`${titleClass}`}>Sakatlıklara SON!</h1>
               </motion.li>
               <motion.li
-                className=" text-[#eee] flex items-center justify-center w-[620px]"
+                className=" text-[#000] flex items-center justify-center w-[620px]"
                 variants={item}
               >
-                <label className="dropShadow text-[20px]  mt-8 line-clamp-4 text-balance font-bold ">
+                <label className=" text-[20px]  mt-4 line-clamp-4 text-balance font-bold ">
                   Yapay zeka destekli termal görüntüleme sistemimizle
                   profesyonel sporcularda olası sakatlık, kas problemleri ve
                   yorgunlukları tespit ediyor ve sakatlıkları belirliyoruz.
@@ -137,3 +78,11 @@ export const App = () => {
     </div>
   );
 };
+
+// <Player
+// autoplay
+// loop
+// src={deneme}
+// className="dropShadow"
+// style={{ height: "400px" }}
+// />
