@@ -6,10 +6,10 @@ export const useStore = create((set) => ({
   count: 1,
   inc: (number) => set((state) => ({ count: parseInt(number) + state.count })),
   theme: {
-    theme: "light",
-    bgColor: "bg-[#D6E1ED]",
-    textColor: "text-[#000]",
-    cardBorder: "border-[#eef2f7]",
+    theme: "dark",
+    bgColor: "bg-[#393E46]",
+    textColor: "text-[#fff]",
+    cardBorder: "border-[#000]",
   },
   setTheme: (newTheme) => set({ theme: newTheme }),
 }));

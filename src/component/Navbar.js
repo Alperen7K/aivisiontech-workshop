@@ -26,12 +26,8 @@ const navbarItem = {
   },
 };
 
-export const Navbar = ({ isView }) => {
+export const Navbar = () => {
   const { theme, setTheme, isShow } = useStore();
-
-  console.log(theme);
-
-  console.log(isShow);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -92,10 +88,38 @@ export const Navbar = ({ isView }) => {
                 </a>
               </motion.li>
               <motion.li variants={navbarItem}>
-                <label className={labelClass}>Haberler</label>
+                <a href="#news">
+                  <label
+                    className={`${
+                      isShow === "news"
+                        ? `font-extrabold mx-1 text-[20px] px-6 ${
+                            theme.theme === "light"
+                              ? "text-black"
+                              : "text-white"
+                          }  border-b-[3px] border-solid border-[#5DB19B] box-border`
+                        : labelClass
+                    }`}
+                  >
+                    Haberler
+                  </label>
+                </a>
               </motion.li>
               <motion.li variants={navbarItem}>
-                <label className={labelClass}>Hakkımızda</label>
+                <a href="#about">
+                  <label
+                    className={`${
+                      isShow === "about"
+                        ? `font-extrabold mx-1 text-[20px] px-6 ${
+                            theme.theme === "light"
+                              ? "text-black"
+                              : "text-white"
+                          }  border-b-[3px] border-solid border-[#5DB19B] box-border`
+                        : labelClass
+                    }`}
+                  >
+                    Hakkımızda
+                  </label>
+                </a>
               </motion.li>
               <motion.li variants={navbarItem}>
                 <label className={labelClass}>İletişim</label>

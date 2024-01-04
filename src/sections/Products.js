@@ -5,21 +5,19 @@ import { useInView } from "react-intersection-observer";
 import "animate.css";
 import { useStore } from "../zustandStore";
 
-export const Products = ({ setIsView }) => {
+export const Products = () => {
   const { theme, setIsShow } = useStore();
 
   const [ref, inView, entry] = useInView({
-    threshold: 0.5,
+    // threshold: 0.1,
     triggerOnce: false,
   });
+
+  console.log("entryPro", inView);
 
   useEffect(() => {
     if (inView) {
       setIsShow("product");
-      setIsView(true);
-    } else {
-      setIsShow("main");
-      setIsView(false);
     }
   }, [inView]);
 
@@ -45,16 +43,17 @@ export const Products = ({ setIsView }) => {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <section>
-      <div className={`${theme.bgColor} h-full w-full  card-bg-pattern`}>
+    <section id="products">
+      <div className={`${theme.bgColor} h-full w-full  about-bg-pattern`}>
         <motion.div
-          animate={inView ? "visible" : "hidden"}
-          variants={variants}
-          transition={{ duration: 1, ease: "easeOut" }}
+          // animate={inView ? "visible" : "hidden"}
+          // variants={variants}
+          // transition={{ duration: 1, ease: "easeOut" }}
           ref={ref}
-          className={`w-full  ${
-            theme.theme === "light" ? "bg-[#eef2f7]" : "bg-[#40444b]"
-          } h-[14vh] rounded-b-[100px]`}
+          className="h-[14vh] w-full"
+          // className={`w-full  ${
+          //   theme.theme === "light" ? "bg-[#eef2f7]" : "bg-[#40444b]"
+          // } h-[14vh] rounded-b-[100px]`}
         />
         <div className="h-[85vh] w-full flex flex-col items-center justify-evenly ">
           <motion.div
@@ -74,7 +73,6 @@ export const Products = ({ setIsView }) => {
             <ProductCard index={2} />
           </motion.div>
         </div>
-        <div id="products" />
       </div>
     </section>
   );

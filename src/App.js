@@ -1,6 +1,6 @@
 import "./App.css";
 import { Navbar } from "./component";
-import { Ai4sports, Products } from "./sections";
+import { Ai4sports, News, Products, About } from "./sections";
 import { useEffect, useState } from "react";
 import { useStore } from "./zustandStore";
 
@@ -10,18 +10,22 @@ import { useStore } from "./zustandStore";
 // #F77F93 PEMBE
 
 export const App = () => {
-  const [isView, setIsView] = useState(false);
   const { theme } = useStore();
 
   return (
     <div
       className={`${theme.bgColor} duration-200 ${theme.textColor}  h-[100vh] w-[100vw]  flex flex-col items-center`}
     >
-      <Navbar isView={isView} />
+      <Navbar />
 
       <div className="w-full h-[86vh]">
         <Ai4sports className={""} />
-        <Products setIsView={setIsView} />
+        <div className={`w-full h-[100px] ${theme.bgColor} `} />
+        <Products />
+        <div className={`w-full h-[100px] ${theme.bgColor} `} />
+        <News />
+        <div className={`w-full h-[100px] ${theme.bgColor} `} />
+        <About />
       </div>
     </div>
   );

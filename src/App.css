@@ -47,6 +47,13 @@ body{
   background-size: cover;
 }
 
+.about-bg-pattern{
+  background-image: url(/src/assets/about-bg.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .card-bg-pattern{
   background-image: url(/src/assets/cardBg.svg);
   background-position: center;
@@ -63,7 +70,7 @@ body{
 
 .card-bg {
   -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(15px);
 }
 
 
