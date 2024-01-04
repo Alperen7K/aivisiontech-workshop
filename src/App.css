@@ -1,3 +1,15 @@
+html {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+}
+
 .radial-gradient {
   background: radial-gradient(circle at right top, #4ecca3 0, #232931 50vw);
 }
@@ -34,3 +46,24 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.card-bg-pattern{
+  background-image: url(/src/assets/cardBg.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-pattern-reverse{
+  background-image: url(/src/assets/reverseBg.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-bg {
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+

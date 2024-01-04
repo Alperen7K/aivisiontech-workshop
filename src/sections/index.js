@@ -1,2 +1,2 @@
-export * from "./Ai4sports.js";
-export * from "./Ai2neo.js";
+export * from "./Ai4sports";
+export * from "./Products";
