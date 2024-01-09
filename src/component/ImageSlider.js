@@ -6,12 +6,26 @@ import bigSpor3 from "../assets/imageSlider/BİGG Spor Ödülleri-3.jpg";
 import panel from "../assets/imageSlider/Expomed Eurasia Panel.jpg";
 import bigSpor1 from "../assets/imageSlider/big-spor-1.jpeg";
 import yatırım from "../assets/imageSlider/yatırım-haber-2.jpeg";
+import right from "../assets/rightArrow.svg";
+import left from "../assets/leftArrow.svg";
 
-export const ImageSlider = () => {
+export const ImageSlider = ({ ref, inView }) => {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
 
-  let buttonClass =
-    "text-[#fff] mt-[550px] text-[20px] rounded-md py-2 px-4 shadow-2xl active:animate-bounce  card-bg bg-[#F77F93] hover:bg-[#f6627b] hover:scale-105";
+  const rightButton = {
+    hidden: {
+      opacity: 0,
+      x: 500,
+    },
+    visible: { opacity: 1, x: 0 },
+  };
+  const leftButton = {
+    hidden: {
+      opacity: 0,
+      x: -500,
+    },
+    visible: { opacity: 1, x: 0 },
+  };
 
   const handleNext = () => {
     setPositionIndexes((prevIndexes) => {
@@ -50,21 +64,42 @@ export const ImageSlider = () => {
           key={index}
           src={image}
           alt={image}
+          ref={ref}
           className="rounded-[12px] border-4 shadow-2xl border-solid border-[#eef2f7]"
           initial="center"
           animate={positions[positionIndexes[index]]}
           variants={imageVariants}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1 }}
           style={{ width: "40%", position: "absolute" }}
         />
       ))}
-      <div className="w-[50vw] flex justify-evenly mt-10 z-[50]">
-        <button className={buttonClass} onClick={handleBack}>
-          Geri
-        </button>
-        <button className={buttonClass} onClick={handleNext}>
-          İleri
-        </button>
+      <div className="w-[100vw] flex justify-between z-[50]">
+        <motion.div
+          animate={inView ? "visible" : "hidden"}
+          variants={leftButton}
+          transition={{ duration: 1, ease: "easeOut" }}
+          ref={ref}
+        >
+          <button
+            className="text-[#fff] flex items-center relative justify-center h-[100px] rounded-r-full  border-[#5DB19B] border-r-8 border-y-8 font-black border-solid w-[75px]  text-[20px]  py-2 px-4 shadow-2xl active:animate-bounce duration-200  card-bg  hover:scale-105"
+            onClick={handleBack}
+          >
+            <img src={left} className="w-full absolute" />
+          </button>
+        </motion.div>
+        <motion.div
+          animate={inView ? "visible" : "hidden"}
+          variants={rightButton}
+          transition={{ duration: 1, ease: "easeOut" }}
+          ref={ref}
+        >
+          <button
+            className="text-[#fff] flex items-center relative justify-center h-[100px] rounded-l-full  border-[#5DB19B] border-l-8 border-y-8 font-black border-solid w-[75px]  text-[20px]  py-2 px-4 shadow-2xl active:animate-bounce duration-200  card-bg  hover:scale-105"
+            onClick={handleNext}
+          >
+            <img src={right} className="w-full absolute" />
+          </button>
+        </motion.div>
       </div>
     </div>
   );

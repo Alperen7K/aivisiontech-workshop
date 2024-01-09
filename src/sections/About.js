@@ -23,7 +23,7 @@ export const About = () => {
   console.log("entryNews", inView);
 
   return (
-    <section id="news">
+    <section id="about">
       <div className={`${theme.bgColor} h-full w-full  about-bg-pattern`}>
         <motion.div
           className="h-full w-full flex items-center justify-center"

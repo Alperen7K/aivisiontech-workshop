@@ -25,7 +25,7 @@ export const News = () => {
     <section id="news">
       <div className={`${theme.bgColor} h-full w-full  bg-pattern`}>
         <motion.div ref={ref}>
-          <ImageSlider />
+          <ImageSlider ref={ref} inView={inView} />
         </motion.div>
       </div>
     </section>
