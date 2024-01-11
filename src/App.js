@@ -1,7 +1,6 @@
 import "./App.css";
 import { Navbar } from "./component";
-import { Ai4sports, News, Products, About } from "./sections";
-import { useEffect, useState } from "react";
+import { Ai4sports, News, Products, About, Contact } from "./sections";
 import { useStore } from "./zustandStore";
 
 // #D6E1ED beyazımsı
@@ -26,6 +25,8 @@ export const App = () => {
         <News />
         <div className={`w-full h-[100px] ${theme.bgColor} `} />
         <About />
+        <div className={`w-full h-[100px] ${theme.bgColor} `} />
+        <Contact />
       </div>
     </div>
   );

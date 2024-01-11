@@ -122,8 +122,23 @@ export const Navbar = () => {
                 </a>
               </motion.li>
               <motion.li variants={navbarItem}>
-                <label className={labelClass}>İletişim</label>
+                <a href="#contact">
+                  <label
+                    className={`${
+                      isShow === "contact"
+                        ? `font-extrabold mx-1 text-[20px] px-6 ${
+                            theme.theme === "light"
+                              ? "text-black"
+                              : "text-white"
+                          }  border-b-[3px] border-solid border-[#5DB19B] box-border`
+                        : labelClass
+                    }`}
+                  >
+                    İletişim
+                  </label>
+                </a>
               </motion.li>
+
               <motion.li variants={navbarItem}>
                 <div className="ml-10">
                   <img

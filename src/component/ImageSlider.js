@@ -6,11 +6,15 @@ import bigSpor3 from "../assets/imageSlider/BİGG Spor Ödülleri-3.jpg";
 import panel from "../assets/imageSlider/Expomed Eurasia Panel.jpg";
 import bigSpor1 from "../assets/imageSlider/big-spor-1.jpeg";
 import yatırım from "../assets/imageSlider/yatırım-haber-2.jpeg";
-import right from "../assets/rightArrow.svg";
-import left from "../assets/leftArrow.svg";
+import rightWhite from "../assets/rightArrow.svg";
+import leftWhite from "../assets/leftArrow.svg";
+import rightBlack from "../assets/rightArrowBlack.svg";
+import leftBlack from "../assets/leftArrowBlack.svg";
+import { useStore } from "../zustandStore";
 
 export const ImageSlider = ({ ref, inView }) => {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
+  const { theme, setIsShow } = useStore();
 
   const rightButton = {
     hidden: {
@@ -58,7 +62,7 @@ export const ImageSlider = ({ ref, inView }) => {
     right1: { x: "50%", scale: 0.7, zIndex: 3 },
   };
   return (
-    <div className="flex items-center flex-col justify-center h-screen ">
+    <div className="flex w-[100vw] items-center flex-col justify-center h-screen relative">
       {images.map((image, index) => (
         <motion.img
           key={index}
@@ -84,7 +88,10 @@ export const ImageSlider = ({ ref, inView }) => {
             className="text-[#fff] flex items-center relative justify-center h-[100px] rounded-r-full  border-[#5DB19B] border-r-8 border-y-8 font-black border-solid w-[75px]  text-[20px]  py-2 px-4 shadow-2xl active:animate-bounce duration-200  card-bg  hover:scale-105"
             onClick={handleBack}
           >
-            <img src={left} className="w-full absolute" />
+            <img
+              src={theme.theme === "dark" ? leftWhite : leftBlack}
+              className="w-full absolute"
+            />
           </button>
         </motion.div>
         <motion.div
@@ -97,7 +104,10 @@ export const ImageSlider = ({ ref, inView }) => {
             className="text-[#fff] flex items-center relative justify-center h-[100px] rounded-l-full  border-[#5DB19B] border-l-8 border-y-8 font-black border-solid w-[75px]  text-[20px]  py-2 px-4 shadow-2xl active:animate-bounce duration-200  card-bg  hover:scale-105"
             onClick={handleNext}
           >
-            <img src={right} className="w-full absolute" />
+            <img
+              src={theme.theme === "dark" ? rightWhite : rightBlack}
+              className="w-full absolute"
+            />
           </button>
         </motion.div>
       </div>

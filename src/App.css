@@ -1,5 +1,5 @@
 html {
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
 }
 
 section {
@@ -49,6 +49,19 @@ body{
 
 .about-bg-pattern{
   background-image: url(/src/assets/about-bg.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact-light-bg-pattern{
+  background-image: url(/src/assets/contactLight.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contact-dark-bg-pattern{
+  background-image: url(/src/assets/contactDark.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
