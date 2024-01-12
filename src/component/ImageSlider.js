@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import bigSpor2 from "../assets/imageSlider/BİGG Spor Ödülleri-2.jpg";
-import bigSpor3 from "../assets/imageSlider/BİGG Spor Ödülleri-3.jpg";
-import panel from "../assets/imageSlider/Expomed Eurasia Panel.jpg";
-import bigSpor1 from "../assets/imageSlider/big-spor-1.jpeg";
-import yatırım from "../assets/imageSlider/yatırım-haber-2.jpeg";
+import bigSpor2 from "../assets/imageSlider/BİGG Spor Ödülleri-2.png";
+import bigSpor3 from "../assets/imageSlider/BİGG Spor Ödülleri-3.png";
+import panel from "../assets/imageSlider/Expomed Eurasia Panel.png";
+import bigSpor1 from "../assets/imageSlider/big-spor-1.png";
+import yatırım from "../assets/imageSlider/yatırım-haber-2.png";
 import rightWhite from "../assets/rightArrow.svg";
 import leftWhite from "../assets/leftArrow.svg";
 import rightBlack from "../assets/rightArrowBlack.svg";
