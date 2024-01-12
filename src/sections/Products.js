@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { ProductCard } from "../component";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import "animate.css";
 import { useStore } from "../zustandStore";
 
 export const Products = () => {
@@ -20,7 +19,6 @@ export const Products = () => {
       setIsShow("product");
     }
   }, [inView]);
-
 
   const card1 = {
     hidden: {

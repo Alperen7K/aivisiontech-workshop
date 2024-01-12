@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import "animate.css";
 import logoBlack from "../assets/aivisiontechBlack.svg";
 import navLight from "../assets/navLight.json";
 import navDark from "../assets/navDark.json";

@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import "animate.css";
 import { useStore } from "../zustandStore";
 import { Player } from "@lottiefiles/react-lottie-player";
 import blackArrow from "../assets/DownArrowBlack.json";

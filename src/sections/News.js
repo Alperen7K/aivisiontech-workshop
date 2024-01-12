@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import { ImageSlider, ProductCard } from "../component";
+import React, { useEffect } from "react";
+import { ImageSlider } from "../component";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import "animate.css";
 import { useStore } from "../zustandStore";
 
 export const News = () => {
