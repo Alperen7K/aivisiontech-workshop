@@ -55,62 +55,62 @@ export const ImageSlider = ({ ref, inView }) => {
   const positions = ["center", "left1", "left", "right", "right1"];
 
   const imageVariants = {
-    center: { x: "0%", scale: 1, zIndex: 5 },
-    left1: { x: "-50%", scale: 0.7, zIndex: 3 },
-    left: { x: "-90%", scale: 0.5, zIndex: 2 },
-    right: { x: "90%", scale: 0.5, zIndex: 1 },
-    right1: { x: "50%", scale: 0.7, zIndex: 3 },
+   center: { y: "0%", scale: 1, zIndex: 5 },
+   left1: { y: "-50%", scale: 0.7, zIndex: 3 },
+   left: { y: "-90%", scale: 0.5, zIndex: 2 },
+   right: { y: "90%", scale: 0.5, zIndex: 1 },
+   right1: { y: "50%", scale: 0.7, zIndex: 3 },
   };
   return (
-    <div className="flex w-[100vw] items-center flex-col justify-center h-screen relative">
-      {images.map((image, index) => (
-        <motion.img
-          key={index}
-          src={image}
-          alt={image}
-          ref={ref}
-          className="rounded-[12px] border-4 shadow-2xl border-solid border-[#eef2f7]"
-          initial="center"
-          animate={positions[positionIndexes[index]]}
-          variants={imageVariants}
-          transition={{ duration: 1 }}
-          style={{ width: "40%", position: "absolute" }}
-        />
-      ))}
-      <div className="w-[100vw] flex justify-between z-[50]">
-        <motion.div
-          animate={inView ? "visible" : "hidden"}
-          variants={leftButton}
-          transition={{ duration: 1, ease: "easeOut" }}
-          ref={ref}
-        >
-          <button
-            className="text-[#fff] flex items-center relative justify-center h-[100px] rounded-r-full  border-[#5DB19B] border-r-8 border-y-8 font-black border-solid w-[75px]  text-[20px]  py-2 px-4 shadow-2xl active:animate-bounce duration-200  card-bg  hover:scale-105"
-            onClick={handleBack}
-          >
-            <img
-              src={theme.theme === "dark" ? leftWhite : leftBlack}
-              className="w-full absolute"
-            />
-          </button>
-        </motion.div>
-        <motion.div
-          animate={inView ? "visible" : "hidden"}
-          variants={rightButton}
-          transition={{ duration: 1, ease: "easeOut" }}
-          ref={ref}
-        >
-          <button
-            className="text-[#fff] flex items-center relative justify-center h-[100px] rounded-l-full  border-[#5DB19B] border-l-8 border-y-8 font-black border-solid w-[75px]  text-[20px]  py-2 px-4 shadow-2xl active:animate-bounce duration-200  card-bg  hover:scale-105"
-            onClick={handleNext}
-          >
-            <img
-              src={theme.theme === "dark" ? rightWhite : rightBlack}
-              className="w-full absolute"
-            />
-          </button>
-        </motion.div>
-      </div>
+   <div className="flex w-[100vw] items-center  justify-center h-screen relative">
+    {images.map((image, index) => (
+     <motion.img
+      key={index}
+      src={image}
+      alt={image}
+      ref={ref}
+      className="rounded-[12px] border-4 shadow-2xl border-solid border-[#eef2f7]"
+      initial="center"
+      animate={positions[positionIndexes[index]]}
+      variants={imageVariants}
+      transition={{ duration: 1 }}
+      style={{ height: "40%", position: "absolute" }}
+     />
+    ))}
+    <div className="w-[100vw] flex justify-between z-[50]">
+     <motion.div
+      animate={inView ? "visible" : "hidden"}
+      variants={leftButton}
+      transition={{ duration: 1, ease: "easeOut" }}
+      ref={ref}
+     >
+      <button
+       className="text-[#fff] flex items-center relative justify-center h-[100px] rounded-r-full  border-[#5DB19B] border-r-8 border-y-8 font-black border-solid w-[75px]  text-[20px]  py-2 px-4 shadow-2xl active:animate-bounce duration-200  card-bg  hover:scale-105"
+       onClick={handleBack}
+      >
+       <img
+        src={theme.theme === "dark" ? leftWhite : leftBlack}
+        className="w-full absolute"
+       />
+      </button>
+     </motion.div>
+     <motion.div
+      animate={inView ? "visible" : "hidden"}
+      variants={rightButton}
+      transition={{ duration: 1, ease: "easeOut" }}
+      ref={ref}
+     >
+      <button
+       className="text-[#fff] flex items-center relative justify-center h-[100px] rounded-l-full  border-[#5DB19B] border-l-8 border-y-8 font-black border-solid w-[75px]  text-[20px]  py-2 px-4 shadow-2xl active:animate-bounce duration-200  card-bg  hover:scale-105"
+       onClick={handleNext}
+      >
+       <img
+        src={theme.theme === "dark" ? rightWhite : rightBlack}
+        className="w-full absolute"
+       />
+      </button>
+     </motion.div>
     </div>
+   </div>
   );
 };
